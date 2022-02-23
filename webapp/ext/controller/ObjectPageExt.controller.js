@@ -32,6 +32,13 @@ sap.ui.define([], function () {
       _oFvalTable.attachBusyStateChanged(this._onBusyStateChanged);
       _oAllTable.attachBusyStateChanged(this._onBusyStateChanged);
       _oPedTable.attachBusyStateChanged(this._onBusyStateChanged);
+
+      // destory or remove row action template in product value simulation table
+      try {
+        _oPvalTable.getRowActionTemplate().destroy();
+      } catch (error) {
+        // row action template is not available
+      }
     },
 
     /* =========================================================== */
